@@ -151,6 +151,10 @@ img {
     cursor: pointer;
 }
 
+.text-avatar {
+    margin-left: 1.25rem;
+}
+
 .text-avatar p {
     font-size: .75rem;
     color: var(--color-text);
@@ -164,7 +168,7 @@ img {
     color: var(--color-text);
 }
 
-.box-avatar:hover{
+.list-avatar .box-avatar:hover {
     background-color: #d5dbdb;
 }
 /* COL RIGHT */
@@ -174,6 +178,39 @@ img {
 
 .main-chat {
     flex-grow: 1;
+    background-image: url("../img/mine.jpg");
 }
 
+.box-write-message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .625rem 0;
+    background-color: #f3eeea;
+}
+
+.input-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.input-text input {
+    width: 95%;
+    padding: .625rem;
+    border: none;
+}
+
+.icons {
+    padding-left: 1.5625rem;
+}
+
+.vocal-icons {
+    padding-right: 1.5625rem;
+}
+
+.icons,
+.vocal-icons {
+    color: #6b7376;
+    cursor: pointer;
+}
 
