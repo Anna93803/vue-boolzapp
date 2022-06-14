@@ -86,7 +86,6 @@ img {
 .search-chat,
 .box-avatar,
 .my-profile,
-.message-chat-send,
 .box-write-message {
     display: flex;
     align-items: center;
@@ -209,6 +208,11 @@ img {
     margin-bottom: .9375rem;
     word-wrap: break-word;
     position: relative;
+}
+
+.message-chat-send {
+    display: flex;
+    align-items: flex-end;
 }
 
 .bg-send {
