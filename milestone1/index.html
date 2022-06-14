@@ -4,6 +4,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Fontawesome -->
+
         <link rel="stylesheet" href="../css/style.css">
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <title>Boolzapp</title>
@@ -14,10 +18,44 @@
             <div class="container">
                 <div class="row-container">
                     <div class="col-left">
-                        <div class="my-profile"></div>
-                        <div class="active-notifications"></div>
-                        <div class="search-chat"></div>
-                        <div class="list-avatar"></div>
+                        <div class="my-profile">
+                            <div class="my-profile-avatar">
+                                <div class="my-avatar">
+                                    <img src="../img/avatar_io.jpg" alt="avatar">
+                                </div>
+                                <h5>Sofia</h5>
+                            </div>
+                            <div class="setting-left">
+                                <i class="fa-solid fa-circle-notch"></i>
+                                <i class="fa-solid fa-message"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                        <div class="active-notifications">
+                            <div class="notifications-icon">
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </div>
+                            <div class="text-active-notifications">
+                                <p>Ricevi notifiche di nuovi messaggi</p>
+                                <a href="#">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+                        <div class="search-chat">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" name="search">
+                        </div>
+                        <div class="list-avatar">
+                            <div class="box-avatar">
+                                <div class="box-avatar-img">
+                                    <img src="../img/avatar_1.jpg" alt="avatar">
+                                </div>
+                                <div class="text-avatar">
+                                    <h5>Michele</h5>
+                                    <p>Ultimo messaggio inviato</p>
+                                </div>
+                                <div class="date">12:00</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-right">
                         <div class="avatar-profile"></div>
