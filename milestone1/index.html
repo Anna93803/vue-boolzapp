@@ -45,12 +45,12 @@
                             <input type="text" placeholder="Cerca o inizia una nuova chat" name="search">
                         </div>
                         <div class="list-avatar">
-                            <div class="box-avatar">
+                            <div class="box-avatar" v-for="(lista, i) in listaContatti" >
                                 <div class="box-avatar-img">
-                                    <img src="../img/avatar_1.jpg" alt="avatar">
+                                    <img :src="'../img/avatar' + lista.avatar + '.jpg'" :alt="lista.name">
                                 </div>
                                 <div class="text-avatar">
-                                    <h5>Michele</h5>
+                                    <h5>{{lista.name}}</h5>
                                     <p>Ultimo messaggio inviato</p>
                                 </div>
                                 <div class="date">12:00</div>

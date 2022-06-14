@@ -91,6 +91,7 @@ img {
 .setting-left {
     color: #b1b1b1;
     font-size: 1.25rem;
+    cursor: pointer;
 }
 
 .fa-message {
@@ -141,12 +142,13 @@ img {
 }
 
 .list-avatar {
-    padding: .5rem .75rem;
+    overflow: auto;
 }
 
 .box-avatar {
     position: relative;
-    padding-bottom: 1.25rem;
+    padding: .625rem;
+    cursor: pointer;
 }
 
 .text-avatar p {
@@ -156,12 +158,15 @@ img {
 
 .date {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: .3125rem;
+    right: .625rem;
     font-size: .75rem;
     color: var(--color-text);
 }
 
+.box-avatar:hover{
+    background-color: #d5dbdb;
+}
 /* COL RIGHT */
 .col-right {
     flex-direction: column;
