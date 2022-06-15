@@ -147,11 +147,7 @@ img {
 }
 
 .setting-left {
-    color: var(--color-icons);
-    font-size: .8125rem;
     padding: .1875rem;
-    position: absolute;
-    left: 1.25rem;
 }
 
 .search-chat input {

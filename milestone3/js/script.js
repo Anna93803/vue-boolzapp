@@ -169,6 +169,9 @@ new Vue ({
 
     data: {
         listaContatti: contatti,
+        addMessage: "",
+        index: 0,
+
         currentContact: {
             name: "Michele",
             avatar: "_1",
@@ -199,6 +202,14 @@ new Vue ({
             this.currentContact = contact
             return this.currentContact;
         },
+
+        addNewMessage() {
+            
+            this.listaContatti[this.index].messages.push({
+                message: this.addMessage,
+                status: "sent",
+            });
+            this.newMessage = "";
+        }
     }
-    
 });
