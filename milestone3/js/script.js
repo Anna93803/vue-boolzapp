@@ -209,7 +209,12 @@ new Vue ({
                 message: this.addMessage,
                 status: "sent",
             });
-            this.newMessage = "";
+
+            this.addMessage = "";
+
+            console.log("ciao");
+
         }
     }
 });
+
