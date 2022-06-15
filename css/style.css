@@ -71,6 +71,7 @@ img {
     flex-direction: column;
     width: 400px;
     border-right: .0625rem solid var(--color-border);
+    overflow: hidden;
 }
 
 .my-avatar,
@@ -192,6 +193,10 @@ img {
     flex-direction: column;
 }
 
+.col-right {
+    overflow: hidden;
+}
+
 .setting-right {
     margin-right: .625rem;
 }
@@ -211,8 +216,7 @@ img {
     margin: 1.875rem auto;
 }
 
-.message-send,
-.message-received {
+.message {
     padding: .75rem .9375rem;
     border-radius: 7px;
     width: 40%;
@@ -221,16 +225,17 @@ img {
     position: relative;
 }
 
-.message-chat-send {
+.message-chat {
     display: flex;
     align-items: flex-end;
+    flex-direction: column;
 }
 
-.bg-send {
+.sent {
     background-color: #d5f9ba;
 }
 
-.bg-received {
+.received {
     background-color: var(--color-white);
 }
 

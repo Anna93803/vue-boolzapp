@@ -44,7 +44,7 @@
                             <input type="text" placeholder="Cerca o inizia una nuova chat" name="search">
                         </div>
                         <div class="list-avatar">
-                            <div class="box-avatar" v-for="(lista, i) in listaContatti" >
+                            <div class="box-avatar" v-for="lista in listaContatti" @click="activeUser(lista)">
                                 <div class="box-avatar-img">
                                     <img :src="`../img/avatar${lista.avatar}.jpg`" :alt="lista.name">
                                 </div>
@@ -77,22 +77,22 @@
                         </div>
                         <div class="main-chat">
                             <div class="main-container">
-                                <div class="message-chat-send">
-                                    <div class="message-send bg-send">
-                                        <p>Ciao Michele, come stai?</p>
-                                        <div class="date-message">11:58</div>
+                                <div class="message-chat">
+                                    <div class="message" v-for="currentChat in currentContact.messages">
+                                        <p :class="{'sent' : currentChat.status === 'sent', 'received' : currentChat.status === 'received'}">{{currentChat.message}}</p>
+                                        <div class="date-message">{{currentChat.date}}</div>
                                     </div>
-                                    <div class="message-send bg-send">
+                                    <!-- <div class="message-send bg-send">
                                         <p>Sei andato a lavoro oggi?</p>
                                         <div class="date-message">11:58</div>
-                                    </div>
+                                    </div> -->
                                 </div>
-                                <div class="message-chat-received">
-                                    <div class="message-received bg-received">
+                                <!-- <div class="message-chat-received">
+                                    <div class="message-received received">
                                         <p>Ciao, tutto bene!! Si sono andato a lavoro.</p>
                                         <div class="date-message">11:58</div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="box-write-message">
