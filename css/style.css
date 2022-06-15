@@ -142,7 +142,11 @@ img {
     position: relative;
 }
 
-.setting-left .fa-magnifying-glass {
+.fa-magnifying-glass {
+    color: var(--color-icons);
+}
+
+.setting-left {
     color: var(--color-icons);
     font-size: .8125rem;
     padding: .1875rem;
@@ -217,11 +221,8 @@ img {
 }
 
 .message {
-    padding: .75rem .9375rem;
-    border-radius: 7px;
-    width: 40%;
-    margin-bottom: .9375rem;
     word-wrap: break-word;
+    width: 45%;
     position: relative;
 }
 
@@ -231,8 +232,16 @@ img {
     flex-direction: column;
 }
 
-.sent {
+.sent,
+.received {
     background-color: #d5f9ba;
+    padding: .75rem .9375rem;
+    border-radius: 7px;
+    margin-bottom: .9375rem;
+}
+
+.flex-start  {
+    align-self: flex-start;
 }
 
 .received {
