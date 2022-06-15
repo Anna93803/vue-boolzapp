@@ -205,14 +205,22 @@ new Vue ({
 
         addNewMessage() {
             
-            this.listaContatti[this.index].messages.push({
+            this.addMessage = {
+                date: "25/01/2020 15:31:02",
                 message: this.addMessage,
                 status: "sent",
-            });
+            }
+
+            this.currentContact.messages.push(this.addMessage);
 
             this.addMessage = "";
 
-            console.log("ciao");
+            setTimeout(() => {
+                this.listaContatti[this.index].messages.push({
+                    message: "Ok",
+                    status: "received",
+                });
+            }, 1000);
 
         }
     }
