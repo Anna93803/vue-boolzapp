@@ -86,7 +86,8 @@ img {
 .search-chat,
 .box-avatar,
 .my-profile,
-.box-write-message {
+.box-write-message,
+.box {
     display: flex;
     align-items: center;
 }
@@ -96,12 +97,14 @@ img {
     justify-content: space-between;
 }
 
-.setting-left {
+.setting-left,
+.setting-right {
     color: var(--color-icons);
     font-size: 1.25rem;
 }
 
-.fa-message {
+.fa-message,
+.fa-paperclip {
     padding: 0 .625rem;
 }
 
@@ -138,7 +141,7 @@ img {
     position: relative;
 }
 
-.fa-magnifying-glass {
+.setting-left .fa-magnifying-glass {
     color: var(--color-icons);
     font-size: .8125rem;
     padding: .1875rem;
@@ -187,6 +190,14 @@ img {
 .col-right,
 .message-chat-send  {
     flex-direction: column;
+}
+
+.setting-right {
+    margin-right: .625rem;
+}
+
+.col-right .box-avatar {
+    justify-content: space-between;
 }
 
 .main-chat {
