@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Fontawesome -->
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- dayjs -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.8/dayjs.min.js' integrity='sha512-kZ+x2gdehn6OZMWZSp3Vt5R+v9hQTYEATQwaUfWquhxbvNVAy6IRtYs7asdyxKUTqG0I5ZqBqnzcBrpnHJCAGw==' crossorigin='anonymous'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.8/plugin/customParseFormat.min.js'
+        integrity='sha512-/rAikt6xZJcTqu7olN/2DFvqXDEUC31/yyFAYrSGi087R+j54QTWWRJxHtbN5NjppOxT3d1gk4ZwkPWX88W35w==' crossorigin='anonymous'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.8/plugin/relativeTime.min.js' 
+		integrity='sha512-2Sb0BW+c8+/rhj243eqCrgws9FsZkMjH8ErZvcT4HR1HzLpHMfqsSgnJ+gMvH+/GJmu6wdNOu54n93XwbQDCKQ==' crossorigin='anonymous'></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <!-- /dayjs -->
+        <title>Boolzapp</title>
+    </head>
+    <body>
+        <div class="bg-body"></div>
+        <div id="app">
+            <div class="container">
+                <div class="row-container">
+                    <div class="col-left">
+                        <div class="my-profile">
+                            <div class="my-profile-avatar">
+                                <div class="my-avatar">
+                                    <img src="../img/avatar_io.jpg" alt="avatar">
+                                </div>
+                                <h5>Sofia</h5>
+                            </div>
+                            <div class="setting-left">
+                                <i class="fa-solid fa-circle-notch"></i>
+                                <i class="fa-solid fa-message"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                        <div class="active-notifications">
+                            <div class="notifications-icon">
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </div>
+                            <div class="text-active-notifications">
+                                <p>Ricevi notifiche di nuovi messaggi</p>
+                                <a href="#">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+                        <div class="search-chat">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" name="search" v-model="searchContact">
+                        </div>
+                        <div class="list-avatar">
+                            <div class="box-avatar" v-for="lista in filterContacts()" @click="activeUser(lista)">
+                                <div class="box-avatar-img">
+                                    <img :src="`../img/avatar${lista.avatar}.jpg`" :alt="lista.name">
+                                </div>
+                                <div class="text-avatar">
+                                    <h5>{{lista.name}}</h5>
+                                    <p>Ultimo messaggio inviato</p>
+                                </div>
+                                <div class="date">12:00</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-right">
+                        <div class="avatar-profile">
+                            <div class="box-avatar" >
+                                <div class="box">
+                                    <div class="box-avatar-img">
+                                        <img :src="`../img/avatar${currentContact.avatar}.jpg`" alt="avatar">
+                                    </div>
+                                    <div class="text-avatar">
+                                        <h5>{{currentContact.name}}</h5>
+                                        <p>Ultimo accesso oggi alle 12:05</p>
+                                    </div>
+                                </div>
+                                <div class="setting-right">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <i class="fa-solid fa-paperclip"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-chat">
+                            <div class="main-container">
+                                <div class="message-chat">
+                                    <div class="message" v-for="currentChat in currentContact.messages" :class="{'sent' : currentChat.status === 'sent', 'received flex-start' : currentChat.status === 'received'}">
+                                        <p>{{currentChat.message}}</p>
+                                        <div class="date-message">{{currentChat.date}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-write-message">
+                            <div class="icons">
+                                <i class="fa-regular fa-face-smile"></i>
+                            </div>
+                            <div class="input-text">
+                                <input type="text" placeholder="Scrivi un messaggio" v-model="addMessage" @keyup.enter="addNewMessage()">
+                            </div>
+                            <div class="vocal-icons">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
