@@ -170,7 +170,6 @@ new Vue ({
     data: {
         listaContatti: contatti,
         addMessage: "",
-        index: 0,
         currentContact: contatti[0],
     },
 
@@ -193,7 +192,7 @@ new Vue ({
             this.addMessage = "";
 
             setTimeout(() => {
-                this.listaContatti[this.index].messages.push({
+                this.currentContact.messages.push({
                     message: "Ok",
                     status: "received",
                 });
