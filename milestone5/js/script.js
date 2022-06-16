@@ -186,7 +186,7 @@ new Vue ({
 
         addNewMessage() {
             this.addMessage = {
-                date: dayjs().format("HH:mm"),
+                date: dayjs(),
                 message: this.addMessage,
                 status: "sent",
             }
@@ -199,7 +199,7 @@ new Vue ({
                 this.currentContact.messages.push({
                     message: "Ok",
                     status: "received",
-                    date: dayjs().format("HH:mm"),
+                    date: dayjs(),
                 });
             }, 1000);
 
@@ -212,6 +212,12 @@ new Vue ({
                 }
             })
         },
-    }
+        formatTime(i) {
+            let dataFormattata= dayjs(this.currentContact.messages[i].date,"DD/MM/YYYY HH:mm").format("HH:mm");
+            return dataFormattata;
+        },
+    
+    }    
+
 });
 

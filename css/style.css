@@ -184,7 +184,7 @@ img {
     color: var(--color-text);
 }
 
-.list-avatar .box-avatar:hover {
+.bg-grey {
     background-color: #d5dbdb;
 }
 /* COL RIGHT */
